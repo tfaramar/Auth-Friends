@@ -36,7 +36,6 @@ class FriendsList extends React.Component {
                     })}
                 </div>
                 <FriendsForm />
-
             </div>
 
         )

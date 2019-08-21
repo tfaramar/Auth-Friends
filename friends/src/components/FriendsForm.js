@@ -1,11 +1,11 @@
 import React from 'react';
 import axios from 'axios';
+import { axiosWithAuth } from '../utils/axiosWithAuth';
 
 class FriendsForm extends React.Component {
 
     state = {
         friend: {
-            id: null,
             name: '',
             age: '',
             email: '',
@@ -23,7 +23,7 @@ class FriendsForm extends React.Component {
 
     submit = event => {
         event.preventDefault();
-        axios
+        axiosWithAuth()
             .post('http://localhost:5000/api/friends', this.state.friend)
             .then(res => {
                 console.log(res.data);
